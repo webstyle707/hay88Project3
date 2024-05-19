@@ -1,0 +1,200 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.bg {
+  background-image: url(./images/bg.webp);
+}
+.bgheader {
+  background-image: url(./images/headframe.webp);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.bgframe {
+  background-image: url(./images/frame.webp);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.dgl {
+  background-image: url(./images/dg-left.webp);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.dgr {
+  background-image: url(./images/dg-right.webp);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.bgbtn {
+  background-image: url(./images/button-click2.webp);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Verdana, sans-serif;
+}
+.mySlides {
+  display: none;
+}
+img {
+  vertical-align: middle;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  width: 100%;
+  position: relative;
+  margin: auto;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {
+    font-size: 11px;
+  }
+}
+
+.slider-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.card {
+  flex: 0 0 calc(100% / 3);
+  /* Adjust card size as needed */
+  box-sizing: border-box;
+}
+
+.menu-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #333;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      transform: translateY(-100%);
+      transition: transform 0.4s;
+    }
+
+    /* Style for when the menu bar is visible */
+    .menu-bar.visible {
+      transform: translateY(0%);
+    }
+
+
+
+
+
+    .active {
+      top: 0% !important;
+  }
+
+.box .box-item {
+  display: none;
+}
+.box .active {
+  display: block;
+}
+
+
+/* btn button */
+.btn {
+  background-color: #e2e2e2;
+  outline: none;
+  text-shadow: -1px -1px 0 #4f4d57, 1px -1px 0 #4f4d57, -1px 1px 0 #4f4d57, 1px 1px 0 #4f4d57, 5px 5px 10px rgba(1, 1, 1, 1);
+  color: #f2f2f2
+}
+.actived,
+.btn:hover {
+  background-image: url(./images/back-button.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: yellow;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* =================> style click button scroll to top */
+
+#scrollToTopBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 50%;
+  transition: opacity 0.3s;
+}

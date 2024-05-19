@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+
+    <!-- script slides swaper -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.css"
+      integrity="sha512-pmAAV1X4Nh5jA9m+jcvwJXFQvCBi3T17aZ1KWkqXr7g/O2YMvO8rfaa5ETWDuBvRq6fbDjlw4jHL44jNTScaKg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"
+      integrity="sha512-Ysw1DcK1P+uYLqprEAzNQJP+J4hTx4t/3X2nbVwszao8wD+9afLjBQYjz7Uk4ADP+Er++mJoScI42ueGtQOzEA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+
+  </head>
+
+  <body class="bg bg-[#580a11] w-full">
+    <!-- dragon -->
+    <div
+      class="flex justify-between w-full items-end h-screen fixed lg:-bottom-16 xl:bottom-0 2xl:bottom-28"
+    >
+      <img
+        src="./images/dg-right.webp"
+        class="w-36 md:w-60 lg:w-64 xl:w-72 2xl:w-[22rem] z-0"
+      />
+      <img
+        src="./images/dg-left.webp"
+        class="w-36 md:w-60 lg:w-64 xl:w-72 2xl:w-[22rem] z-0"
+      />
+    </div>
+
+  
+    <!-- click menu -->
+    <div
+      id="menuBar"
+      class="menu-bar w-full h-auto py-6 fixed lg:hidden bg-gray-100 top-16 z-50"
+    >
+      <ul
+        class="text-gray-500 font-bold uppercase text-[12.8px] z-50 space-y-2 pl-5"
+      >
+        <li></li>
+        <li class="px-32 border-b border-gray-200 pb-1">
+          <a href="#" class="hover:text-red-500 transition-all duration-300">Nổ hũ </a>
+        </li>
+        <li class="px-32 border-b border-gray-200 pb-1">
+          <a href="#" class="hover:text-red-500 transition-all duration-300">Bắn cá </a>
+        </li>
+        <li class="px-32 border-b border-gray-200 pb-1">
+          <a href="#" class="hover:text-red-500 transition-all duration-300">Game 3D </a>
+        </li>
+        <li class="px-32 border-b border-gray-200 pb-1">
+          <a href="#" class="hover:text-red-500 transition-all duration-300">Casino</a>
+        </li>
+        <li class="px-32 border-b border-gray-200 pb-1">
+          <a href="#" class="hover:text-red-500 transition-all duration-300">Thể thao </a>
+        </li>
+        <li class="px-32 border-b border-gray-200 pb-1">
+          <a href="#" class="hover:text-red-500 transition-all duration-300">Đá Gà </a>
+        </li>
+        <li class="px-32 border-b border-gray-200 pb-1">
+          <a href="#" class="hover:text-red-500 transition-all duration-300">Xổ số </a>
+        </li>
+        <li class="px-32 border-b border-gray-200 pb-1">
+          <a href="#" class="hover:text-red-500 transition-all duration-300">E-Sport </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- smale navbar -->
+    <div
+      class="w-full justify-between flex lg:hidden items-center px-5 bg-white py-3 fixed z-50 top-0"
+    >
+      <img src="./images/logo.png" class="w-32" />
+
+      <div class="flex items-center space-x-8 justify-center">
+        <div><img src="./images/gift.webp" class="w-8" /></div>
+
+        <div
+          class="p-2 border border-red-500 rounded"
+          onclick=""
+          id="toggleButton"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6 text-red-500"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+
+
+      <!-- navbar -->
+      <div class="flex justify-center">
+        <div class="w-full xl:w-11/12 2xl:w-8/12 flex justify-center z-50 2xl:px-20 fixed">
+          <div
+          class="bgheader border-x-2 rounded-md border-yellow-200 h-[70px] w-full hidden lg:flex justify-between items-center px-3 z-10"
+        >
+        <a href="#">
+          <img src="./images/logo.png" class="w-36" />
+        </a>
+  
+          <ul
+            class="text-gray-500 font-bold flex justify-center space-x-5 items-center uppercase text-[12.8px]"
+          >
+            <li><a class="hover:text-red-500 transition-all duration-300" href="#">Nổ hũ </a></li>
+            <li><a class="hover:text-red-500 transition-all duration-300" href="#">Bắn cá </a></li>
+            <li><a class="hover:text-red-500 transition-all duration-300" href="#">Game 3D </a></li>
+            <li><a class="hover:text-red-500 transition-all duration-300" href="#">Casino</a></li>
+            <li><a class="hover:text-red-500 transition-all duration-300" href="#">Thể thao </a></li>
+            <li><a class="hover:text-red-500 transition-all duration-300" href="#">Đá Gà </a></li>
+            <li><a class="hover:text-red-500 transition-all duration-300" href="#">Xổ số </a></li>
+            <li><a class="hover:text-red-500 transition-all duration-300" href="#">E-Sport </a></li>
+          </ul>
+         
+          <a href="#">
+            <img src="./images/gift.webp" class="w-8" />
+          </a>
+        </div>
+        </div>
+      </div>
+
+
+    <!-- content page -->
+    <div
+      class="w-full xl:w-11/12 2xl:w-8/12 mx-auto 2xl:px-20 space-y-5 md:space-y-12 mt-14 lg:mt-28"
+    >
+  
+      <!-- Đường truyền tốc độ cao -->
+      <div class="w-full pt-8 md:pt-16 lg:pt-0">
+        <div
+          class="bgframe mx-auto w-11/12 xl:w-full hidden md:flex justify-center items-center space-x-5 font-semibold text-white text-2xl border-x-2 rounded-md border-yellow-200"
+        >
+          <img src="./images/icon1.webp" class="w-14" />
+          <p class="uppercase">Đường truyền tốc độ cao</p>
+        </div>
+
+        <div class="mx-auto w-11/12 flex md:hidden justify-center items-center">
+          <img src="./images/frame2.png" class="w-full z-10" />
+        </div>
+      </div>
+
+      <ul
+        class="grid grid-cols-2 md:grid-cols-3 gap-8 z-10 w-11/12 xl:w-full mx-auto"
+      >
+        <a href="#" class="z-10"
+          ><img src="./images/button1.png" class="z-10"
+        /></a>
+
+        <a href="#" class="z-10"
+          ><img src="./images/button2.png" class="z-10"
+        /></a>
+
+        <a href="#" class="z-10"
+          ><img src="./images/button3.png" class="z-10"
+        /></a>
+
+        <a href="#" class="z-10"
+          ><img src="./images/button4.png" class="z-10"
+        /></a>
+
+        <a href="#" class="z-10"
+          ><img src="./images/button5.png" class="z-10"
+        /></a>
+
+        <a href="#" class="z-10"
+          ><img src="./images/button6.png" class="z-10"
+        /></a>
+      </ul>
+
+
+     
+<!-- swaper slides per view 1 -->
+
+      <div class="space-y-10 z-20 w-11/12 xl:w-full mx-auto">
+        <div class="swiper cubeSwiper mt-10">
+          <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                  <img src="./images/slide1.png">
+              </div>
+              <div class="swiper-slide">
+                  <img src="./images/slide2.png">
+              </div>
+              <div class="swiper-slide">
+                  <img src="./images/slide3.png">
+              </div>
+              <div class="swiper-slide">
+                  <img src="./images/slide4.png">
+              </div>
+              <div class="swiper-slide">
+                  <img src="./images/slide5.png">
+              </div>
+              <div class="swiper-slide">
+                  <img src="./images/slide6.png">
+              </div>
+          </div>
+      </div>
+
+<!-- swaper slides per view 3 -->
+      <div class="swiper cubeSwiper2 mt-5" slidesPerView="3">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="./images/slide1.png" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./images/slide2.png" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./images/slide3.png" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./images/slide4.png" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./images/slide5.png" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./images/slide6.png" />
+          </div>
+        </div>
+      </div>
+   
+        <div
+          class="mt-10 bg-gray-100 border-[3px] border-yellow-500 rounded-3xl z-20"
+        >
+          <div class="grid md:grid-cols-12 h-[650px] overflow-hidden z-20">
+            <div
+              class="md:col-span-3 flex flex-col justify-center items-center z-20 bg-white"
+            >
+              <div class="md:hidden p-3 z-20">
+                <img src="./images/frame3.png" />
+              </div>
+              <div
+                id="myDIV"
+                class="titles z-20 grid grid-cols-4 gap-1 md:gap-3 md:grid-cols-1 *:p-0.5 md:*:p-3 *:mx-1 md:*:ml-2 *:cursor-pointer *:overflow-hidden *:border-[3px] *:border-yellow-500 *:rounded-full *:flex *:justify-center *:items-center"
+              >
+                <div class="btn title-item actived active z-20">
+                  <img
+                    src="./images/text1.png"
+                    class="w-6/12 z-20 select-none"
+                  />
+                </div>
+                <div class="btn title-item">
+                  <img
+                    src="./images/text2.png"
+                    class="w-5/12 z-20 select-none"
+                  />
+                </div>
+                <div class="btn title-item">
+                  <img
+                    src="./images/text3.png"
+                    class="w-8/12 z-20 select-none"
+                  />
+                </div>
+                <div class="btn title-item">
+                  <img
+                    src="./images/text4.png"
+                    class="w-5/12 z-20 select-none"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="md:col-span-9 z-20 bg-white">
+              <div class="hidden md:block p-1">
+                <img src="./images/frame3.png" />
+              </div>
+              <div class="box px-5 bg-white">
+                <div class="box-item active mt-8 text-md md:text-2xl bg-white">
+                  <div class="flex flex-col sm:flex-row gap-5 bg-white">
+                    <img src="./images/img1.webp" class="w-40" />
+                    <p>
+                      CẨM MỸ: Chùa Tam Bảo tặng quà tết cho bà con có hoàn cảnh
+                      khó khăn và học sinh có tinh thần vượt khó tại huyện Cẩm
+                      Mỹ
+                    </p>
+                  </div>
+                  <div class="flex flex-col sm:flex-row gap-5 mt-5 bg-white">
+                    <img src="./images/img2.webp" class="w-40" />
+                    <p>
+                      Công ty TNHH truyền thông giải trí hay88 tặng quà tết cho
+                      bà con có hoàn cảnh khó khăn và học sinh có tinh thần vượt
+                      khó tại huyện Cẩm Mỹ
+                    </p>
+                  </div>
+                </div>
+
+                <!-- video -->
+                <div class="box-item mt-5 bg-white">
+                  <video
+                    loop
+                    autoplay
+                    muted
+                    controls
+                    autobuffer
+                    playsinline
+                    src="./images/video.mp4"
+                    type="video/mp4"
+                  ></video>
+                </div>
+
+                <!-- gioi thieu -->
+                <div class="box-item mt-3 text-gray-600 bg-white">
+                  <div
+                    class="scrolling-auto overflow-auto scroll-smooth py-3 h-[500px]"
+                  >
+                    <p>
+                      <a
+                        href="https://n19-hay88.com"
+                        class="text-red-600 font-semibold"
+                        >hay88.com</a
+                      >
+                      là sân chơi cá cược uy tín được nhiều người chơi tin
+                      tưởng, tham gia hiện nay.
+                      <a
+                        href="https://n19-hay88.com"
+                        class="text-red-600 font-semibold"
+                        >hay88.com</a
+                      >
+                      mang đến đa dạng những tựa game hot, các trò giải trí độc
+                      đáo cùng với cơ chế nạp rút nhanh chóng. Đặc biệt mọi hoạt
+                      động của
+                      <a
+                        href="https://n19-hay88.com"
+                        class="text-red-600 font-semibold"
+                        >hay88.com</a
+                      >
+                      đều được bảo vệ, kiểm soát nghiêm ngặt nên tuyệt đối sẽ
+                      không có bất kỳ trường hợp gian lận vào kết quả game. Giới
+                      thiệu đôi chút về nhà cái
+                      <a
+                        href="https://n19-hay88.com"
+                        class="text-red-600 font-semibold"
+                        >hay88.com</a
+                      >
+                      uy tín. Cho đến hiện tại, sân chơi này đã đăng ký kinh
+                      doanh và hoạt động hợp pháp tại Costa Rica. Tất cả các trò
+                      giải trí, dịch vụ cá cược tại đây đều tuân thủ theo hiệp
+                      ước cờ bạc của chính phủ Costa Rica.
+                    </p>
+
+                    <p class="mt-5">
+                      Với mục tiêu xây dựng một không gian cá cược đáng tin cậy
+                      và an toàn,
+                      <a
+                        href="https://n19-hay88.com"
+                        class="text-red-600 font-semibold"
+                        >hay88.com</a
+                      >
+                      chúng tôi luôn nỗ lực phát triển và cải thiện chất lượng
+                      dịch vụ của mình. Hơn nữa, để phát triển không ngừng trong
+                      lĩnh vực giải trí trực tuyến,
+                      <a
+                        href="https://n19-hay88.com"
+                        class="text-red-600 font-semibold"
+                        >hay88.com</a
+                      >
+                      đã nhận được sự chấp thuận và cấp phép công khai từ tổ
+                      chức PAGCOR. Đặc biệt, chúng tôi phải tuân thủ sự giám sát
+                      chặt chẽ từ chính phủ Philippines.
+                    </p>
+
+                    <p class="mt-5">
+                      Vậy nên
+                      <a
+                        href="https://n19-hay88.com"
+                        class="text-red-600 font-semibold"
+                        >hay88.com</a
+                      >
+                      đem đến một không gian cá cược an toàn, công bằng và minh
+                      bạch. Người chơi có thể yên tâm tham gia đổi thưởng mà
+                      không cần lo lắng về việc gian lận hoặc hành vi không
+                      trung thực xuất hiện. Mọi hành vi vi phạm điều khoản nhà
+                      cái và không trung thực sẽ bị xử lý công bằng.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- daily -->
+                <div
+                  class="box-item mt-3 text-gray-600 scrolling-auto overflow-auto scroll-smooth bg-white"
+                >
+                  <div
+                    class="scrolling-auto overflow-auto scroll-smooth py-3 h-[500px] *:mt-4"
+                  >
+                    <p>
+                      Đại Lý
+                      <a
+                        href="https://n20-hay88.com"
+                        class="text-red-600 font-semibold"
+                        >hay88</a
+                      >
+                      Tiền Thưởng Không Giới Hạn
+                    </p>
+                    <p>Một Lời Mời - Đồng Hành Trọn Đời</p>
+                    <p>
+                      Kính gửi toàn thể Quý Đại Lý. Chúng tôi xin gửi lời cảm ơn
+                      chân thành tới những khách hàng đã luôn dành sự tin tưởng
+                      và ủng hộ dịch vụ của
+                      <a
+                        href="https://n20-hay88.com"
+                        class="text-red-600 font-semibold"
+                        >hay88</a
+                      >
+                      trong suốt quãng thời gian vừa qua. Với nhu cầu mở rộng
+                      thị trường và nâng cao hiệu quả chất lượng dịch vụ uy tín
+                      tới khách hàng,
+                      <a
+                        href="https://n20-hay88.com"
+                        class="text-red-600 font-semibold"
+                        >hay88</a
+                      >
+                      trân trọng kính mời Quý Đại Lý hợp tác tham gia vào hệ
+                      thống kinh doanh cùng phát triển với những ưu đãi hấp dẫn
+                      dành cho Quý Đại Lý.
+                    </p>
+                    <p>
+                      Chương trình đăng ký Đại Lý hoàn toàn miễn phí, đăng ký dễ
+                      dàng, không giới hạn thu nhập, kiếm tiền hàng tuần cùng
+                      <a
+                        href="https://n20-hay88.com"
+                        class="text-red-600 font-semibold"
+                        >hay88</a
+                      >
+                      Nhanh tay mời bạn bè cùng chơi ở
+                      <a
+                        href="https://n20-hay88.com"
+                        class="text-red-600 font-semibold"
+                        >hay88</a
+                      >
+                      , một lời mời - đồng hành trọn đời - tiền thưởng không
+                      giới hạn.
+                    </p>
+                    <p>
+                      Chương trình hợp tác đại lý của chúng tôi là một hệ thống
+                      thúc đẩy thị trường chuyên nghiệp được sử dụng rộng rãi
+                      với mục đích quảng bá công ty cá cược hàng đầu
+                      <a
+                        href="https://n20-hay88.com"
+                        class="text-red-600 font-semibold"
+                        >hay88</a
+                      >
+                      đến với khách hàng, công ty tin tưởng vào sự thành công
+                      tốt đẹp trong quá trình hợp tác của công ty và quý đối
+                      tác.
+                    </p>
+                    <p>Mọi hình thức hợp tác vui lòng liên hệ:</p>
+                    <p>Telegram: @hay88DAILY</p>
+                    <p>Hotline: +84 9251 89 888</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class=" space-y-0  mx-auto w-11/12 xl:w-full">
+        <div class=" ">
+          <img src="./images/gamehot.webp" class="sticky"/>
+        </div>
+        <div class=" ">
+          <ul class="grid grid-cols-2 gap-6 ">
+            <li  class="w-full z-20">
+              <img src="./images/Card1.png"class="w-full"/>
+            </li>
+            <li class="w-full z-20">
+              <img src="./images/Card2.png" class="w-full "/>
+            </li>
+            <li class="w-full z-20">
+              <img src="./images/Card3.png" class="w-full "/>
+            </li>
+            <li class="w-full z-20">
+              <img src="./images/Card4.png" class="w-ful"/>
+            </li>
+            <li class="w-full z-20">
+              <img src="./images/Card5.png" class="w-full"/>
+            </li>
+            <li class="w- z-20">
+              <img src="./images/Card6.png" class="w-full"/>
+            </li>
+  
+          </ul>
+        </div>
+      </div>
+      
+
+      <div class=" space-y-12 mx-auto w-11/12 xl:w-full">
+        <img src="./images/service.png" class=" sticky"/>
+        <img src="./images/company.webp" class=" sticky"/>
+      </div> 
+    </div>
+    </div>
+
+
+      <!-- buttton click scroll to top -->
+      <button onclick="scrollToTop()" title="Go to top"  id="scrollToTopBtn" ><ion-icon name="arrow-up" class="fixed bottom-3 right-4 z-50 text-3xl bg-red-700 px-0.5 py-1.5 rounded text-yellow-500"></ion-icon></button>
+
+      <!-- footer -->
+      <footer class=" w-full bg-red-600 mt-16 sticky">
+        <div class="w-full xl:w-11/12 2xl:w-8/12 mx-auto 2xl:px-20 space-y-5 md:space-y-12 py-14 ">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-4 lg:gap-16 mx-auto  w-10/12 lg:w-11/12 xl:w-full ">
+            <div class=" space-y-4 ">
+              <img src="./images/logo.png" class=" w-40"/>
+              <p class=" text-gray-200 text-[10.8px] lg:text-[14.8px]  ">
+                Chúng tôi có các trò chơi phù hợp với mọi người chơi khi chơi Casino Online. Không chỉ có hàng trăm trò chơi Casino, chúng tôi còn gửi tặng nhiều phần thưởng và khuyến mãi cho các thành viên của mình.
+              </p>
+              <img src="./images/18+.webp" class="w-60">
+            </div>
+
+            <div class="flex space-x-3 md:justify-between md:space-x-1">
+              <div class=" space-y-2">
+                <h1 class=" text-lg font-semibold text-gray-100">Liên kết nhanh</h1>
+                <p class="text-[10.8px] lg:text-[14.8px] text-gray-200 hover:text-yellow-400 cursor-pointer transition-all duration-300">
+                  <a href="#">VỀ CHÚNG TÔI</a>
+                </p>
+                <p class="text-[10.8px] lg:text-[14.8px] text-gray-200 hover:text-yellow-400 cursor-pointer transition-all duration-300">
+                  <a href="#">ĐẠI LÝ</a>
+                </p>
+                <p class="text-[10.8px] lg:text-[14.8px] text-gray-200 hover:text-yellow-400 cursor-pointer transition-all duration-300">
+                  <a href="#">HƯỚNG DẪN GỬI TIỀN</a>
+                 
+                </p>
+                <p class="text-[10.8px] lg:text-[14.8px] text-gray-200 hover:text-yellow-400 cursor-pointer transition-all duration-300">
+                  <a href="#">HƯỚNG DẪN GỬI TIỀN</a>
+                </p>
+                <p class="text-[10.8px] lg:text-[14.8px] text-gray-200 hover:text-yellow-400 cursor-pointer transition-all duration-300">
+                  <a href="#">LIÊN HỆ CHÚNG TÔI</a>
+                 
+                </p>
+              </div>
+              <div class=" space-y-2">
+                <h1 class=" text-lg font-semibold text-gray-100">Tổng hợp</h1>
+                <p class="text-[10.8px] lg:text-[14.8px] text-gray-200 hover:text-yellow-400 cursor-pointer transition-all duration-300">
+                  <a href="#">CASINO</a>
+                </p>
+                <p class="text-[10.8px] lg:text-[14.8px] text-gray-200 hover:text-yellow-400 cursor-pointer transition-all duration-300">
+                  <a href="#">NỔ HŨ</a>  
+                </p>
+                <p class="text-[10.8px] lg:text-[14.8px] text-gray-200 hover:text-yellow-400 cursor-pointer transition-all duration-300">
+                 
+                  <a href="#">BẮN CÁ</a>  
+
+                </p>
+                <p class="text-[10.8px] lg:text-[14.8px] text-gray-200 hover:text-yellow-400 cursor-pointer transition-all duration-300">
+                 
+                  <a href="#">THỂ THAO</a>  
+
+                </p>
+                <p class="text-[10.8px] lg:text-[14.8px] text-gray-200 hover:text-yellow-400 cursor-pointer transition-all duration-300">
+                  <a href="#">ĐÁ GÀ</a>  
+                
+                </p>
+                <p class="text-[10.8px] lg:text-[14.8px] text-gray-200 hover:text-yellow-400 cursor-pointer transition-all duration-300">
+                
+                  <a href="#">GAME BÀI 3D</a>  
+                  
+                </p>
+                <p class="text-[10.8px] lg:text-[14.8px] text-gray-200 hover:text-yellow-400 cursor-pointer transition-all duration-300">
+                 
+                  <a href="#">XỔ SỐ</a>  
+                
+                </p>
+               
+              </div>
+            </div>
+            <div>
+              <img src="./images/payment.webp"/>
+            </div>
+        </div>
+      
+        </div>
+        <div class="w-full bg-[#b91c1c] py-7 text-[14px] text-gray-200 flex items-center justify-center">
+          Copyright © hay88 Reserved
+         </div>
+      </footer>
+
+
+
+
+
+
+
+
+
+
+
+    <script src="./index.js"></script>
+  </body>
+</html>
